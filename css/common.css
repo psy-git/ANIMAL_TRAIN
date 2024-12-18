@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+:root{
+    --font-size-pc:20px;
+    --font-size-tab:18px;
+    --font-size-mobile:14px;
+    --font-heading2:'HakgyoansimDunggeunmisoTTF-B';
+
+    --font-thin:300;
+    --font-medium:400;
+    --font-bold:600;
+    --font-black:900;
+
+    --main-color:#B0C4DD;
+    --darker-color:#6A7685;
+
+    --space-xx-small:0.25rem; 
+    --space-x-small:1rem; 
+    --space-small:0.5rem; 
+    --space-middle:2rem;
+    --space-large:3rem;
+    --space-x-large:6rem;
+    --space-xx-large:9rem;
+}
+html{
+    font-size: 20px;
+    line-height: 1.4;
+}
+.point{
+    font-size: 18px;
+    color:#6A7685;
+}
+b{
+    color:#8D9DB1;
+}
+h2{
+    font-family: var(--font-heading2);
+    line-height: 1.1;
+    font-size: 3rem;
+    font-weight: bold;
+}
+h3{
+    line-height: 1.1;
+    font-size:2.5rem;
+    font-weight: var(--font-black);
+}
+h4{
+    font-family: var(--font-heading2);
+    line-height: 1.1;
+    font-size:2rem;
+    font-weight: bold;
+}
+.btn_common{
+    background: var(--main-color);
+    border:1px solid var(--main-color);
+    font-size:0.9rem;
+    padding:1rem 2rem;
+    display: inline-block;
+    white-space: nowrap;
+}
+.btn_common:hover{
+    background: none;
+    border:1px solid var(--main-color);
+}
+.btn_common:active{
+    border:1px solid #000;
+    background: var(--main-color);
+}
+
+main>*{
+    margin-bottom:var(--space-x-large);
+}
+main>*:last-child{
+    margin-bottom:0;
+}
+.common_frame{
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+

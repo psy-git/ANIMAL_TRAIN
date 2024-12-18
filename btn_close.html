@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header_inner{display: flex;}
+.hidden_gnb {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 100;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hidden_gnb.active {
+    display: block;
+    opacity: 1;
+}
+
+.btn_open img {
+    transition: transform 0.3s ease;
+}
+.hidden_gnb{
+    position: absolute;
+    left:0;
+    top:100px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="header_mo">
+        <div class="header_inner">
+            <h1><a href="#"><img src="./img/logo.svg" alt="말랑훈련소 로고"></a></h1>
+            <div class="btn_open">
+                <a href="#" id="toggleMenu"><img src="./img/btn_open.svg" alt="gnb 여는 버튼"></a>
+            </div>
+            <div class="hidden_gnb">
+                <figure class="hidden_gnb_left"><img src="./img/gnb-img.jpg" alt="gnb이미지"></figure>
+                <div class="hidden_gnb_right">
+                    <div class="right_menu point">
+                        <ul>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#" class="sign">회원가입</a></li>
+                        </ul>
+                    </div>
+                    <ul class="gnb_mo">
+                        <li><a href="#">말랑훈련소 소개</a></li>
+                        <li><a href="#">훈련 프로그램</a></li>
+                        <li><a href="#">전문가 소개</a></li>
+                        <li><a href="#">수업후기</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                    <div class="bottom_menu point">
+                        <span>고객상담실 1000-0000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const toggleMenuBtn = document.getElementById("toggleMenu");
+    const hiddenGnb = document.querySelector(".hidden_gnb");
+    const btnOpenImg = "./img/btn_open.svg"; // btn_open 이미지 경로
+    const btnCloseImg = "./img/btn_close.svg"; // btn_close 이미지 경로
+
+    let isMenuOpen = false; // 메뉴 열림 상태
+
+    toggleMenuBtn.addEventListener("click", (e) => {
+        e.preventDefault(); // 기본 동작 방지
+        isMenuOpen = !isMenuOpen; // 상태 반전
+
+        if (isMenuOpen) {
+            hiddenGnb.classList.add("active"); // 메뉴 열기
+            toggleMenuBtn.querySelector("img").setAttribute("src", btnCloseImg); // btn_close로 변경
+            toggleMenuBtn.querySelector("img").setAttribute("alt", "gnb 닫는 버튼");
+        } else {
+            hiddenGnb.classList.remove("active"); // 메뉴 닫기
+            toggleMenuBtn.querySelector("img").setAttribute("src", btnOpenImg); // btn_open으로 변경
+            toggleMenuBtn.querySelector("img").setAttribute("alt", "gnb 여는 버튼");
+        }
+    });
+});
+
+
+    </script>  
+</body>
+</html>
